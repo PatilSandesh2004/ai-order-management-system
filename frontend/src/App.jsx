@@ -5,9 +5,11 @@ import Reports from './pages/Reports'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Orders from './pages/Orders'
+import CreateOrder from './pages/CreateOrder'
 import Inventory from './pages/Inventory'
 import Alerts from './pages/Alerts'
 import Analytics from './pages/Analytics'
+import Chat from './pages/Chat'
 function AppShell({ children }) {
   const location = useLocation()
 
@@ -43,8 +45,10 @@ export default function App() {
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/orders/new" element={<CreateOrder />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/alerts" element={<Alerts />} />
+        <Route path="/chat" element={<Chat />} />
         <Route
             path="/reports"
             element={<Reports />}
@@ -57,10 +61,6 @@ export default function App() {
           path="*"
           element={<Navigate to="/" replace />}
         />
-        <Route
-  path="/reports"
-  element={<Reports />}
-/>
       </Routes>
     </AppShell>
   )

@@ -1,4 +1,4 @@
-import { Eye } from 'lucide-react'
+import { Eye, PencilLine } from 'lucide-react'
 
 const statusClasses = {
   'Order Placed': 'bg-blue-100 text-blue-700',
@@ -18,7 +18,7 @@ const predictionClasses = {
   'High Risk': 'bg-red-100 text-red-700',
 }
 
-export default function OrderTable({ orders = [] }) {
+export default function OrderTable({ orders = [], onUpdateStatus }) {
   return (
     <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
       <div className="overflow-x-auto">
@@ -141,12 +141,25 @@ export default function OrderTable({ orders = [] }) {
                     </td>
 
                     <td className="whitespace-nowrap px-6 py-5">
-                      <button
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50"
-                        title="View Order"
-                      >
-                        <Eye className="h-4 w-4" />
-                      </button>
+                      <div className="flex items-center gap-2">
+                        <button
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50"
+                          title="View Order"
+                        >
+                          <Eye className="h-4 w-4" />
+                        </button>
+
+                        {onUpdateStatus ? (
+                          <button
+                            type="button"
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm hover:bg-slate-50"
+                            title="Update Status"
+                            onClick={() => onUpdateStatus(order)}
+                          >
+                            <PencilLine className="h-4 w-4" />
+                          </button>
+                        ) : null}
+                      </div>
                     </td>
                   </tr>
                 )

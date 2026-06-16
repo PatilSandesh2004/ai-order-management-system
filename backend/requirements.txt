@@ -17,3 +17,4 @@ faker==30.8.2
 
 python-multipart==0.0.12
 email-validator==2.2.0
+groq
