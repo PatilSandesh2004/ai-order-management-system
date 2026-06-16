@@ -1,4 +1,4 @@
-import { LayoutDashboard, ShoppingCart, Package, BellRing, Boxes, FileBarChart2, Settings, LineChart, ChevronDown } from 'lucide-react'
+import { LayoutDashboard, ShoppingCart, Package, BellRing, Boxes, FileBarChart2, Settings, LineChart, ChevronDown, MessagesSquare } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 
 const navigation = [
@@ -6,6 +6,7 @@ const navigation = [
   { name: 'Orders', href: '/orders', icon: ShoppingCart },
   { name: 'Inventory', href: '/inventory', icon: Package },
   { name: 'Alerts', href: '/alerts', icon: BellRing },
+  { name: 'Chat', href: '/chat', icon: MessagesSquare },
   { name: 'Analytics', href: '/analytics', icon: LineChart },
   { name: 'Settings', href: '/dashboard', icon: Settings },
   {
